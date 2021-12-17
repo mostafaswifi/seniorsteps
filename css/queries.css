@@ -1,0 +1,33 @@
+@media screen and (max-width: 877.98px) {
+  img.hero-resizer {
+    width: 53%;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .title {
+    margin-left: 6rem;
+  }
+  .about {
+    padding: 0;
+  }
+  section.card-holder .deco::after {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  img.hero-resizer {
+    width: 100%;
+  }
+  .title {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 424.98px) {
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+  }
+}

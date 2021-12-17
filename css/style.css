@@ -1,0 +1,269 @@
+/* documentation */
+
+/* 
+
+[ 1 ] generals ======================>
+[ 2 ] section hero ==================>
+[ 3 ] section cards =================>
+[ 4 ] section percent ===============>
+[ 5 ] section testimonial ===========>
+
+
+*/
+/* [ 2 ] generals ====================================================================================================================================*/
+@import "./queries.css";
+
+@font-face {
+  src: url(../assets/fonts/Roboto-Bold.ttf);
+  font-family: mainfont;
+}
+
+@font-face {
+  src: url(../assets/fonts/Poppins-Light.ttf);
+  font-family: secfont;
+}
+
+:root {
+  --mainfont: mainfont;
+  --secfont: secFont;
+  --sky: rgb(0, 133, 173);
+}
+
+body {
+  font-family: var(--secfont);
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+h1 {
+  font-family: var(--mainfont);
+  font-size: 5vw !important;
+}
+
+h2 {
+  font-family: var(--mainfont);
+  font-size: 2.5vw !important;
+}
+
+footer ul li{
+  position: relative;
+}
+
+footer ul li::before{
+  position: absolute;
+  content: "";
+  left: -15px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+li:hover::before {
+  background-color: green;
+}
+
+a{
+  text-decoration: none;
+}
+
+.text-sky {
+  color: var(--sky);
+}
+
+.text-shadow {
+  text-shadow: 4px 4px 6px rgb(73, 73, 73);
+}
+
+.nocursor {   caret-color: rgba(0,0,0,0); }
+
+/* [ 2 ] section hero ================================================================================================================================*/
+.hero {
+  background-image: url(../assets/imgs/graphs/hero-bg.png);
+}
+
+.carousel-control-next {
+  bottom: unset;
+  top: 44%;
+  left: 20px;
+}
+
+.carousel-control-prev {
+  bottom: unset;
+  top: 51%;
+  left: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 10px;
+  height: 15px;
+}
+
+.hero-resizer {
+  width: 60%;
+}
+
+button.btn-size {
+  width: 150px;
+}
+
+.deco {
+  position: relative;
+}
+
+.deco::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 15%;
+  height: 3px;
+  background-color: green;
+}
+
+.deco::before {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 16vw;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.card-holder .deco::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50px;
+  width: 5%;
+  height: 3px;
+}
+
+/* [ cards section ] ================================================================================================================================*/
+.progress-circle {
+  font-size: 20px;
+  margin: 20px;
+  position: relative;
+  padding: 0;
+  width: 5em;
+  height: 5em;
+  background-color: transparent;
+  border-radius: 50%;
+  line-height: 5em;
+}
+
+.progress-circle:after {
+  border: none;
+  position: absolute;
+  top: 0.35em;
+  left: 0.35em;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+  width: 4.3em;
+  height: 4.3em;
+  background-color: transparent;
+  content: " ";
+}
+
+.progress-circle span {
+  position: absolute;
+  line-height: 5em;
+  width: 5em;
+  text-align: center;
+  display: block;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.left-half-clipper {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  position: absolute;
+}
+
+.progress-circle.over50 .left-half-clipper {
+  clip: rect(auto, auto, auto, auto);
+}
+
+.value-bar {
+  position: absolute;
+
+  clip: rect(0, 2.5em, 5em, 0);
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+
+  box-sizing: border-box;
+}
+
+.progress-circle.over50 .first50-bar {
+  position: absolute;
+  clip: rect(0, 5em, 5em, 2.5em);
+  background-color: transparent;
+  border: 4px solid white;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+}
+
+.progress-circle:not(.over50) .first50-bar {
+  display: none;
+}
+
+.progress-circle.p0 .value-bar {
+  display: none;
+}
+
+.progress-circle.p55 .value-bar {
+  transform: rotate(198deg);
+}
+
+.progress-circle.p65 .value-bar {
+  transform: rotate(234deg);
+}
+
+.progress-circle.p85 .value-bar {
+  transform: rotate(306deg);
+}
+
+/* [ 4 ] percent section =============================================================================================================================*/
+
+section.percent {
+  background-image: url(../assets/imgs/graphs/skill-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.percent .deco::after,
+.percent .deco::before {
+  background-color: white;
+}
+
+/* [ 5 ] testimonial section =========================================================================================================================*/
+
+section.testimonial .carousel-control-next {
+  bottom: unset;
+  top: 50%;
+  left: 85% !important;
+}
+
+section.testimonial .carousel-control-prev {
+  bottom: unset;
+  top: 51%;
+  left: -35px;
+}
